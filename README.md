@@ -1,34 +1,38 @@
-# README: DHIS2-Kobo Integration Project
+# README: KOBO Event Integration
 
 ## Overview
-This project facilitates the integration of data between KoboToolbox and DHIS2, utilizing Python-based scripts for automation. It modularizes the code into specific files for better maintainability and scalability.
+This project facilitates the integration of gender perception survey data from KoboToolbox to DHIS2 as events. It modularizes the logic into specific files for better scalability and maintainability.
 
 ## File Structure
 
-- **constants.py**: Contains constant values like API endpoints, credentials, and configuration details.
-- **utils.py**: Includes utility functions for logging and other shared functionalities.
-- **mapping.py**: Houses mapping logic for converting codes into meaningful values (e.g., partner codes, gender, region, etc.).
-- **integration.py**: Handles interactions with the DHIS2 API, including checking for existing entries and pushing new data.
-- **main.py**: Orchestrates the entire process, fetching data from KoboToolbox, processing it, and sending it to DHIS2.
+- **constants.py**: Contains API credentials, URLs, and configuration constants.
+- **utils.py**: Provides logging utilities for streamlined error and info logging.
+- **mapping.py**: Includes mapping definitions for data transformations.
+- **integration.py**: Handles DHIS2 interactions for fetching and pushing events.
+- **main.py**: Orchestrates the entire process from data fetching to event creation.
 
 ## Workflow
-1. **Fetch Data from KoboToolbox**: Data is retrieved using the Kobo API, filtered by region.
-2. **Mapping**: Raw data is processed through mapping functions to prepare it for DHIS2.
-3. **Validation**: Checks if the data already exists in DHIS2.
-4. **Push to DHIS2**: New entries are sent to DHIS2 using the API.
-5. **Logging**: All actions and errors are logged for auditing and debugging.
+1. **Fetch Data**: Retrieve survey data from KoboToolbox using its API.
+2. **Mapping**: Map Kobo data fields to DHIS2 data elements.
+3. **Validation**: Verify existing tracked entity instances (TEIs) in DHIS2.
+4. **Event Creation**: Create and push events to DHIS2.
+5. **Logging**: Log all operations and errors for audit and debugging purposes.
 
 ## Setup and Usage
 
 ### Prerequisites
 - Python 3.8 or higher.
 
-
 ### Configuration
-- Update the credentials and API endpoints in `constants.py`.
+- Update credentials and API details in `constants.py`.
 
 ### Running the Script
 Execute the main script:
 ```bash
 python main.py
 ```
+
+## Logging
+- Logs are stored in `gender_perception.log`.
+- Logs include info messages for successful operations and error details for failures.
+
