@@ -1,26 +1,34 @@
-# Kobo-DHIS Integration
+# README: KOBO-DHIS2 Integration for Enrollment & Events
 
-This Python script facilitates the integration of data from KoboToolbox into DHIS2. It fetches data from KoboToolbox, transforms it, and creates Tracked Entity Instances and enrollments in DHIS2.
+## Overview
+This repository provides scripts to integrate data from KoboToolbox into DHIS2. It supports two types of integrations:
+1. **Enrollment**: Tracks entity enrollments and their attributes.
+2. **Events**: Captures gender perception survey responses as DHIS2 events.
 
-## Prerequisites
+## Features
+- **Data Fetching**: Retrieve data from KoboToolbox using its API.
+- **Mapping**: Convert KoboToolbox fields into DHIS2 attributes and data elements.
+- **Event Creation**: Push data to DHIS2 as enrollment or program stage events.
+- **Modular Design**: Code is structured for scalability and maintainability.
+- **Logging**: Logs all operations and errors for transparency and debugging.
 
-- Python 3.x
+## Structure
+- **Enrollment**: Scripts handle entity registration, attribute mapping, and enrollments.
+- **Events**: Scripts handle survey data mapping and event creation.
 
-## Configuration
-
-1. Set up your credentials:
-   - Update `kobo_username` and `kobo_password` with your KoboToolbox credentials.
-   - Update `dhis2_username` and `dhis2_password` with your DHIS2 credentials.
-
-2. Specify the KoboToolbox form ID:
-   - Set the `form_id` variable with the relevant KoboToolbox form ID.
-
-3. Adjust other parameters:
-   - Customize the DHIS2 program ID and any other parameters as needed.
+## Setup
+1. Update credentials and configuration in `constants.py`.
 
 ## Usage
+- **Run Enrollment Events Integration**:
+  ```bash
+  python main.py under enrollment branch
+  ```
+- **Run Gender Perception Events Integration**:
+  ```bash
+  python main.py under event branch
+  ```
 
-Run the script using the following command:
+## Logging
+Logs are stored in separate files named after the enrollment/event script
 
-```bash
-python kobo_dhis_integration.py
