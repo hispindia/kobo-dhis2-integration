@@ -1,26 +1,34 @@
-# Kobo-DHIS Integration
+# README: DHIS2-Kobo Integration Project
 
-This Python script facilitates the integration of data from KoboToolbox into DHIS2. It fetches data from KoboToolbox, transforms it, and creates Tracked Entity Instances and enrollments in DHIS2.
+## Overview
+This project facilitates the integration of data between KoboToolbox and DHIS2, utilizing Python-based scripts for automation. It modularizes the code into specific files for better maintainability and scalability.
 
-## Prerequisites
+## File Structure
 
-- Python 3.x
+- **constants.py**: Contains constant values like API endpoints, credentials, and configuration details.
+- **utils.py**: Includes utility functions for logging and other shared functionalities.
+- **mapping.py**: Houses mapping logic for converting codes into meaningful values (e.g., partner codes, gender, region, etc.).
+- **integration.py**: Handles interactions with the DHIS2 API, including checking for existing entries and pushing new data.
+- **main.py**: Orchestrates the entire process, fetching data from KoboToolbox, processing it, and sending it to DHIS2.
 
-## Configuration
+## Workflow
+1. **Fetch Data from KoboToolbox**: Data is retrieved using the Kobo API, filtered by region.
+2. **Mapping**: Raw data is processed through mapping functions to prepare it for DHIS2.
+3. **Validation**: Checks if the data already exists in DHIS2.
+4. **Push to DHIS2**: New entries are sent to DHIS2 using the API.
+5. **Logging**: All actions and errors are logged for auditing and debugging.
 
-1. Set up your credentials:
-   - Update `kobo_username` and `kobo_password` with your KoboToolbox credentials.
-   - Update `dhis2_username` and `dhis2_password` with your DHIS2 credentials.
+## Setup and Usage
 
-2. Specify the KoboToolbox form ID:
-   - Set the `form_id` variable with the relevant KoboToolbox form ID.
+### Prerequisites
+- Python 3.8 or higher.
 
-3. Adjust other parameters:
-   - Customize the DHIS2 program ID and any other parameters as needed.
 
-## Usage
+### Configuration
+- Update the credentials and API endpoints in `constants.py`.
 
-Run the script using the following command:
-
+### Running the Script
+Execute the main script:
 ```bash
-python kobo_dhis_integration.py
+python main.py
+```
