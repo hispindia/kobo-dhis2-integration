@@ -1,26 +1,68 @@
 
-select_agree = {
-    "options": {
-        "1": "Strongly Disagree",
-        "2": "Disagree",
-        "3": "Neither agree nor disagree",
-        "4": "Agree",
-        "5": "Strongly agree"
-    }
-}
+DATA_ELEMENT_MAPPING = {
+ "UZmuAs7uyNI": {
+        "kobo_id": "M/M_date",
+         "options": {
+        }
+    },
+    "yten4YoixzU": {
+        "kobo_id": "M/M_match",
+        "options": {
+            "1": "Employment",
+            "2": "On-the-job training (such as an internship or apprenticeship)"
+        }
+    },
+    "wbUVx0kF7oo": {
+        "kobo_id": "M/M_method",
+        "options": {
+            "1": "Through the partnerships you established",
+            "2": "Job fairs",
+            "3": "Online Platforms",
+            "4": "Other"
+        }
+    },
+    "tZk9ahDE2qV": {
+        "kobo_id": "M/M_method_online",
+         "options": {
+        }
+    },
 
-select_disagree = {
-    "options": {
-        "5": "Strongly Disagree",
-        "4": "Disagree",
-        "3": "Neither agree nor disagree",
-        "2": "Agree",
-        "1": "Strongly agree"
-    }
-}
+    "J1dEfM0nhXW": {
+        "kobo_id": "M/M_method_other",
+        "options": {
+        }
+    },
 
-data_element_mapping = {
-    "m3BzW18bfUY": {"kobo_id": "G_parents/G_P_housewives", "options": select_agree},
-    "k1V6kgfhnDW": {"kobo_id": "G_parents/G_P_help_home", "options": select_disagree},
-    # Add all other mappings here
+    "BkqID7W1lyo": {
+        "kobo_id": "M/M_company"
+    },
+
+    "CuqgLSwHGgA": {
+        "kobo_id": "M/M_job_title"
+    },
+    "EiuvDdsHf34": {
+        "kobo_id": "M/M_sector",
+        "options": {
+            "1": "Agribusiness",
+            "2": "Creative industries",
+            "3": "ICT",
+            "4": "Renewable energy",
+            "5": "Tourism and leisure",
+            "6":"Other"
+        }
+    },
+
+    "v5ysLXYQwMD": {
+        "kobo_id": "M/M_sector_other",
+        "options": {
+
+        }
+    },
+
+    "CyQPPNa2qXZ": {
+        "kobo_id": "M/M_why",
+        "options": {
+
+        }
+    }
 }
